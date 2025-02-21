@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import AxiosSecure from "../../Hooks/AxiosSecure";
-
+import { CiEdit } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 
 
@@ -36,10 +37,23 @@ const SortableItem = ({ task, refetch }) => {
     }
   }
 
+  const editTask = async id => {
+    const res = await axiosSecure.patch(`/updateDone/${id}`)
+    console.log(res);
+    // if (res.data.modifiedCount > 0) {
+    //   refetch()
+    //   toast.success('Task Move To Done Successful')
+    // }
+  }
+
 
   return (
     <div className="card bg-neutral text-neutral-content mb-4 h-[200px]">
       <div className="card-body items-center text-center">
+        <Link to={`/edit/${task._id}`}>
+          <span
+            className="text-2xl text-white cursor-pointer absolute top-2 right-2"><CiEdit /></span>
+        </Link>
         <h2 className="card-title">{task.taskTitle}</h2>
         <p>{task.tasDescription}.</p>
         <div className="flex gap-2 justify-center">
