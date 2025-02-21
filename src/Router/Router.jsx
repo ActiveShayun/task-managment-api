@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {
                 path: "/edit/:id",
                 element: <EditTask />,
-                loader: ({ params }) => fetch(`http://localhost:5000/singleTask/${params.id}`)
+                loader: ({ params }) => fetch(`https://task-management-server-ten-azure.vercel.app/singleTask/${params.id}`)
             }
         ]
 
