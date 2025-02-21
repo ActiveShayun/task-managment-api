@@ -38,7 +38,7 @@ const EditTask = () => {
 
     return (
         <div className="mt-10">
-            <h2 className="text-2xl font-semibold text-center">Add Your Task</h2>
+            <h2 className="text-2xl font-semibold text-center">Edit Your Task</h2>
             <form onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col justify-center lg:w-5/12 mx-auto "
             >
